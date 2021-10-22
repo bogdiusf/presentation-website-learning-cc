@@ -1,0 +1,31 @@
+body {
+    margin: 0 15px 0 15px;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #e7e6e6;
+}
+
+*,
+:before,
+:after {
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #e7e6e6;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
