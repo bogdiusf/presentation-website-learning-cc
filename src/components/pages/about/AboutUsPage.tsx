@@ -3,50 +3,117 @@ import img2 from '../../../assets/img/endava_2.png';
 import { styled } from '@mui/material/styles';
 
 const Container = styled('div')`
-    margin-top: 7vh;
+    margin-top: 5vh;
+    padding: 15px 0;
 `;
-const InformationWrapper = styled('div')<{ order?: string }>`
+const InformationWrapper = styled('div')<{ order: string }>`
     display: flex;
-    padding: 25px;
+    border-bottom: 10px solid black;
+
+    ${({ order }) =>
+        order === 'first' ? `padding: 0 0 15px 0;` : `padding: 15px 0;`}
 
     & > img {
         width: 100%;
         height: 100%;
     }
+    & > div {
+        margin-left: 30px;
+    }
 
     @media screen and (max-width: 1280px) {
         flex-wrap: wrap;
-        padding: 0 0 50px 0;
+        padding: 0 0 30px 0;
         margin-bottom: 30px;
         border-bottom: 2px solid lightgray;
         ${({ order }) =>
             order === 'first'
                 ? `flex-direction: column;`
                 : `flex-direction: column-reverse;`}
-
         & > img {
             margin: 0 auto;
+        }
+        & > div {
+            margin-left: 0;
         }
     }
 `;
 const MultiNewsWrapper = styled('div')`
     display: flex;
+    padding: 15px 0;
+    border-bottom: 10px solid black;
+
+    .wrapper-child {
+        height: 400px;
+        flex: 1;
+    }
+    .news-order-first {
+        background: rgb(100, 102, 109);
+        color: white;
+        padding: 0 60px;
+        & > .upper-bar {
+            width: 50px;
+            border-top: 5px solid white;
+            margin-bottom: -10px;
+        }
+    }
+    .news-order-second {
+        background: rgb(222, 65, 27);
+        color: white;
+        padding: 0 60px;
+        & > .upper-bar {
+            width: 50px;
+            border-top: 5px solid white;
+            margin-bottom: -10px;
+        }
+    }
+    .news-order-third {
+        background: rgb(239, 239, 240);
+        color: black;
+        padding: 0 60px;
+        & > .upper-bar {
+            width: 50px;
+            border-top: 5px solid black;
+            margin-bottom: -10px;
+        }
+    }
+
+    @media screen and (max-width: 1280px) {
+        flex-wrap: wrap;
+        padding: 0 0 30px 0;
+        margin-bottom: 20px;
+        border-bottom: 2px solid lightgray;
+        .news-order-first,
+        .news-order-second,
+        .news-order-third {
+            padding: 0 20px;
+            & h1 {
+                letter-spacing: -3px;
+            }
+        }
+        .wrapper-child {
+            font-size: 1.2rem;
+        }
+    }
 `;
+
 const News = styled('div')`
     display: flex;
     justify-content: center;
     flex-direction: column;
     font-family: 'robotolight,Arial,sans-serif';
-    font-size: 1.2rem;
+    font-size: 1vw;
     padding: 0 25px;
 
-    & > div {
-        width: 40px;
+    & > .upper-bar {
+        width: 50px;
         border-top: 5px solid black;
+        margin-bottom: -10px;
     }
 
     @media screen and (max-width: 1280px) {
         padding: 0;
+        font-size: 1.2rem;
     }
 `;
 
@@ -55,7 +122,7 @@ const AboutUsPage = () => {
         <Container>
             <InformationWrapper order="first">
                 <News>
-                    <div></div>
+                    <div className="upper-bar"></div>
                     <h1>ENDAVA AT A GLANCE</h1>
                     <p>
                         Endava is reimagining the relationship between people
@@ -104,7 +171,7 @@ const AboutUsPage = () => {
             <InformationWrapper order="second">
                 <img src={img2} alt="heart" />
                 <News>
-                    <div></div>
+                    <div className="upper-bar"></div>
                     <h1>SUSTAINABILITY | WE CARE</h1>
                     <p>
                         As Endava has grown, we have remained true to our core
@@ -116,17 +183,17 @@ const AboutUsPage = () => {
                     </p>
                 </News>
             </InformationWrapper>
-            {/* <MultiNewsWrapper>
-                <News style={{ backgroundColor: '#64666d', color: 'white' }}>
-                    <div style={{ borderTop: '5px solid white' }}></div>
+            <MultiNewsWrapper>
+                <News className="news-order-first wrapper-child">
+                    <div className="upper-bar"></div>
                     <h1>MANAGEMENT TEAM</h1>
                     <p>
                         Meet the people who help to steer our business,
                         including our Board and Senior Management Team.
                     </p>
                 </News>
-                <News style={{ backgroundColor: '#de411b', color: 'white' }}>
-                    <div style={{ borderTop: '5px solid white' }}></div>
+                <News className="news-order-second  wrapper-child">
+                    <div className="upper-bar"></div>
                     <h1>DELIVERY CENTRES</h1>
                     <p>
                         Our people are located both in offices close to our
@@ -134,15 +201,15 @@ const AboutUsPage = () => {
                         locations across Latin America and Europe.
                     </p>
                 </News>
-                <News style={{ backgroundColor: '#e6e6e9' }}>
-                    <div></div>
+                <News className="news-order-third  wrapper-child">
+                    <div className="upper-bar"></div>
                     <h1>AWARDS & ACCREDITATIONS</h1>
                     <p>
                         We are proud to be recognised as an aspirational IT
                         services brand.
                     </p>
                 </News>
-            </MultiNewsWrapper> */}
+            </MultiNewsWrapper>
         </Container>
     );
 };
