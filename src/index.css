@@ -29,3 +29,17 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+
+label {
+    font-size: 1.1rem;
+}
+
+input.form-control,
+input.form-control:focus {
+    background: #f0f0ff;
+}
+
+.error {
+    color: red;
+    font-size: 0.6rem;
+}

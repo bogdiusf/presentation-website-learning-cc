@@ -100,14 +100,8 @@ export default function HomePage(): JSX.Element {
     };
 
     useEffect(() => {
-        const timer: any = setTimeout(async () => {
-            try {
-                await fetchData();
-            } catch (e) {
-                console.log(e);
-            } finally {
-                return clearTimeout(timer);
-            }
+        setTimeout(() => {
+            fetchData();
         }, 2000);
     }, []);
 
