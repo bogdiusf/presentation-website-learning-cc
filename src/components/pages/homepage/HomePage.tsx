@@ -94,7 +94,9 @@ export default function HomePage(): JSX.Element {
     const [isSkeletonLoading, setIsSkeletonLoading] = useState<boolean>(true);
 
     const fetchData = async (): Promise<any> => {
-        const response = await axios.get('/getemployees');
+        const response = await axios.get(
+            'https://employees-api-filip.herokuapp.com/employees'
+        );
         setEmployeeInfo(response.data);
         setIsSkeletonLoading(false);
     };

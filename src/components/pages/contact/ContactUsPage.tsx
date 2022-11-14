@@ -9,6 +9,10 @@ const Footer = styled('footer')`
     gap: 50px;
 `;
 
+const StyledButtons = styled('button')`
+    padding: 10px 20px;
+`;
+
 const ContactUs = () => {
     const validate = Yup.object({
         firstName: Yup.string()
@@ -39,12 +43,15 @@ const ContactUs = () => {
             }}
             validationSchema={validate}
             onSubmit={(values: any, { resetForm }) => {
-                console.log(values);
+                alert(JSON.stringify(values));
                 resetForm({ values: '' });
             }}
         >
             <div style={{ marginTop: '10vh' }}>
-                <h1>Sign Up</h1>
+                <h1 style={{ textAlign: 'center' }}>Sign Up</h1>
+                <h2 style={{ textAlign: 'center' }}>
+                    Playing with Formik and yup
+                </h2>
                 <Form
                     style={{
                         display: 'flex',
@@ -72,15 +79,8 @@ const ContactUs = () => {
                         type="password"
                     />
                     <Footer>
-                        <button className="btn btn-dark mt-3" type="submit">
-                            Register
-                        </button>
-                        <button
-                            className="btn btn-danger mt-3 ml-3"
-                            type="reset"
-                        >
-                            Reset
-                        </button>
+                        <StyledButtons type="submit">Register</StyledButtons>
+                        <StyledButtons type="reset">Reset</StyledButtons>
                     </Footer>
                 </Form>
             </div>
