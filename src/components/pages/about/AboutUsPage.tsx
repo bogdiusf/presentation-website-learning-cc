@@ -123,14 +123,14 @@ const AboutUsPage = () => {
             <InformationWrapper order="first">
                 <News>
                     <div className="upper-bar"></div>
-                    <h1>ENDAVA AT A GLANCE</h1>
+                    <h1>ADEPTS AT A GLANCE</h1>
                     <p>
-                        Endava is reimagining the relationship between people
+                        Adepts is reimagining the relationship between people
                         and technology.
                     </p>
                     <br />
                     <p>
-                        We have helped some of the world’s leading Payments,
+                        We have helped some of the world's leading Payments,
                         Financial Services, Telecommunications, Media,
                         Technology, Consumer Products, Retail, Mobility, and
                         Healthcare companies accelerate their ability to take
@@ -148,7 +148,7 @@ const AboutUsPage = () => {
                         clients become more engaging, responsive, and efficient.
                     </p>
                     <p>
-                        Endava has 8,883 employees, as of June 30, 2021, located
+                        Adepts has 8,883 employees, as of June 30, 2021, located
                         in close to client locations in Australia, Austria,
                         Denmark, Germany, Ireland, Netherlands, Singapore,
                         Switzerland, United Kingdom, United States and nearshore
@@ -160,7 +160,7 @@ const AboutUsPage = () => {
                     </p>
                     <p>
                         Along with investing in long-term customer
-                        relationships, Endava recognises the importance of
+                        relationships, Adepts recognises the importance of
                         providing rewarding and challenging careers for our
                         people and, by doing so, has established itself as the
                         employer of choice in certain regions.
@@ -174,7 +174,7 @@ const AboutUsPage = () => {
                     <div className="upper-bar"></div>
                     <h1>SUSTAINABILITY | WE CARE</h1>
                     <p>
-                        As Endava has grown, we have remained true to our core
+                        As Adepts has grown, we have remained true to our core
                         purpose and values. These values make us distinctive and
                         drive the way we operate as a business and as human
                         beings. We are thoughtful and care deeply about the
